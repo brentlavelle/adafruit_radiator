@@ -23,6 +23,3 @@ The goal is to make a cheap device that will light up some multi-color neopixels
 * Press the reset button on the trinket, and within 10 seconds, while the red light is flashing slowly
 * Press the upload button in the IDE, the red light will blink a little then hopefully you will see it cycle through the colors then off
 * Code more to make this a radiator
-
-
--![alt text](https://www.dropbox.com/s/dkcgo8njbfednfo/2015-01-12%2022.58.34.jpg?dl=0 "I should have bought the breadboard too")
