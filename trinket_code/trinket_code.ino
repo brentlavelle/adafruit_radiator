@@ -11,18 +11,17 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
+int count = 0;
 void setup() {
   strip.begin();
-  strip.show(); // Initialize all pixels to 'off'
-  Serial.begin(9600);           // set up Serial library at 9600 bps
-//  Serial.begin(1200);           // set up Serial library
-  
+  strip.show();            // Initialize all pixels to 'off'
+  Serial.begin(9600);      // set up Serial library at 9600 bps
+  Serial.setTimeout(250);  // speed up reads to wait only 1/4 second
+
   Serial.println("Radiator started!");  // prints hello with ending line break 
-  int count = 0;
 }
 
 void loop() {
-  int count;
   ++count;
   String prompt = String(count)+" prompt> ";
   Serial.println(prompt);
@@ -30,23 +29,22 @@ void loop() {
   while (command == "") {
     delay(10);
     command = Serial.readString();
-     Serial.println("In loop: '"+command+"'");
+//     Serial.println("In loop: '"+command+"'");
   }
   if (command == "red") {
-    setPixel(strip.Color(  0, 127,   0), 50, 0);
+    setPixel(strip.Color(  0, 127,   0), 0);
   } else if (command == "green") {
-    setPixel(strip.Color(127,   0,   0), 50, 0); 
+    setPixel(strip.Color(127,   0,   0), 0); 
   } else if (command == "blue") {
-    setPixel(strip.Color(0,   0,   127), 50, 0); 
+    setPixel(strip.Color(0,   0,   127), 0); 
   } else if (command == "black") {
-    setPixel(strip.Color(0,   0,   0), 50, 0); 
+    setPixel(strip.Color(0,   0,   0), 0); 
   }
-  delay (200);
+  delay (100);
 }
 
-void setPixel(uint32_t c, uint8_t wait, uint16_t index) {
+void setPixel(uint32_t c, uint16_t index) {
   strip.setPixelColor(index, c); 
   strip.show(); 
-  delay(wait * 60 );
 }
 
