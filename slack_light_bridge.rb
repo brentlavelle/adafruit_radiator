@@ -4,7 +4,7 @@ require 'serialport'
 require 'slack-ruby-bot'
 
 #params for serial port
-port_str = "/dev/cu.usbserial-00001141"  #may be different for you
+port_str = ARGV[0]
 baud_rate = 9600
 data_bits = 8
 parity = SerialPort::NONE
