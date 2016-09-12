@@ -30,8 +30,9 @@ void setup() {
 void loop() {
   command = "";
   while (command == "") {
-    delay(10);
+    delay(20);
     command = Serial.readString();
+    command.trim();
   }
   light[2] =command[0];
   light[3] =command[1];
@@ -45,8 +46,8 @@ void loop() {
   int red_i   = strtol(red,   NULL, 16);
   int green_i = strtol(green, NULL, 16);
   int blue_i  = strtol(blue,  NULL, 16);
-  setPixel(strip.Color(red_i, green_i, blue_i), light_i);
-  Serial.println("ACK ("+command+") for light "+String(light_i)+" RGB: '"+String(red_i)+","+String(green_i)+","+String(blue_i)+"'");
+  setPixel(strip.Color(green_i, red_i, blue_i), light_i);
+  Serial.println("ACK "+command);
   delay (10);
 }
 

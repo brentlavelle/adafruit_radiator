@@ -24,11 +24,15 @@ describe 'watch the lights' do
   end
 
   it 'can turn blue' do
-    @light_bridge.set_light @test_light , '03FF02'
+    @light_bridge.set_light @test_light , '0300FF'
   end
 
   it 'can turn green' do
-    @light_bridge.set_light @test_light , '0202FF'
+    @light_bridge.set_light @test_light , '02FF02'
+  end
+
+  it 'can blend colors like yellow' do
+    @light_bridge.set_light @test_light , 'EEEE00'
   end
 
   it 'needs a valid color to work' do
