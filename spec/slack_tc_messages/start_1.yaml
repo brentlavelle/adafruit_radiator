@@ -1,0 +1,12 @@
+--- !ruby/hash:Slack::Messages::Message
+text: "<http://teamcity.example:8111/viewLog.html?buildTypeId=AutogenProjectForOrg690_Qa_Regression_V2_ApiFoo&amp;buildId=1235|Running
+  - core-api :: QA :: regression :: v2 :: api-foo #242>"
+username: TeamCity QA
+icons: !ruby/hash:Slack::Messages::Message
+  image_48: https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2016-06-08/49175205669_48.png
+bot_id: B1N4MPXRR
+attachments:
+- !ruby/hash:Slack::Messages::Message
+  fallback: api-foo
+  id: 1
+type: message
