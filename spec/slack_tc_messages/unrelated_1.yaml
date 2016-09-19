@@ -1,0 +1,7 @@
+--- !ruby/hash:Slack::Messages::Message
+type: message
+channel: C1N64EWDV
+user: U0LE4S9M1
+text: this message is not about a build
+ts: '1468180692.000045'
+team: T024LBJNK

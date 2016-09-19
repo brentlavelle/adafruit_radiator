@@ -1,22 +1,25 @@
 --- !ruby/hash:Slack::Messages::Message
-text: "<http://teamcity:8111/viewLog.html?buildTypeId=AutogenProjectForOrg690_ApiCoreV2&amp;buildId=6072290|Running
-  - core-api :: Core API 2.0 :: Framework :: api-core-v2 #??? [63/merge]>"
+text: "<http://teamcity:8111/viewLog.html?buildTypeId=AutogenProjectForOrg690_Qa_Regression_Auth&amp;buildId=6072289|Succeeded
+  - QA :: regression :: v2 :: auth #242>"
 username: TeamCity QA
 icons: !ruby/hash:Slack::Messages::Message
   image_48: https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2016-06-08/49175205669_48.png
 bot_id: B1N4MPXRR
 attachments:
 - !ruby/hash:Slack::Messages::Message
-  fallback: api-core-v2
+  fallback: auth
   id: 1
+  color: 36a64f
   fields:
   - !ruby/hash:Slack::Messages::Message
-    title: api-core-v2
-    value: 'Agent: s3.example.com-131'
+    title: auth
+    value: |-
+      Agent: build-23273
+      Elapsed: 56s
     short: false
 type: message
 subtype: bot_message
 team: T024LBJNK
 user_team: T024LBJNK
 channel: C1N64EWDV
-ts: '1473970795.000005'
+ts: '1473970641.000006'

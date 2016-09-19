@@ -1,22 +1,23 @@
 --- !ruby/hash:Slack::Messages::Message
-text: "<http://teamcity:8111/viewLog.html?buildTypeId=AutogenProjectForOrg690_ApiCoreV2&amp;buildId=6072290|Running
-  - core-api :: Core API 2.0 :: Framework :: api-core-v2 #??? [63/merge]>"
-username: TeamCity QA
+text: "<http://teamcity:8111/viewLog.html?buildTypeId=Some_jobStuff&amp;buildId=6072562|Running
+  - api-group :: API 2.0 :: Important :: some-job Name for some job
+  Docker #???>"
+username: TeamCity API2.0
 icons: !ruby/hash:Slack::Messages::Message
   image_48: https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2016-06-08/49175205669_48.png
 bot_id: B1N4MPXRR
 attachments:
 - !ruby/hash:Slack::Messages::Message
-  fallback: api-core-v2
+  fallback: some-job Name for some job
   id: 1
   fields:
   - !ruby/hash:Slack::Messages::Message
-    title: api-core-v2
-    value: 'Agent: s3.example.com-131'
+    title: some-job Name for some job
+    value: 'Agent: aws.test.example.com'
     short: false
 type: message
 subtype: bot_message
 team: T024LBJNK
 user_team: T024LBJNK
 channel: C1N64EWDV
-ts: '1473970795.000005'
+ts: '1473976513.000033'

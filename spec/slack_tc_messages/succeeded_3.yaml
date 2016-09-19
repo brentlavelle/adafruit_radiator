@@ -1,0 +1,46 @@
+--- !ruby/hash:Slack::Messages::Message
+text: "<http://teamcity:8111/viewLog.html?buildTypeId=AutogenProjectForOrg690_EndpointDemo&amp;buildId=6072303|Succeeded
+  - core-api :: API 2.0 :: Sapling :: sapling-v2 #2.0-SNAPSHOT d91457a
+  [pp.repair]>"
+username: TeamCity API2.0
+icons: !ruby/hash:Slack::Messages::Message
+  image_48: https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2016-06-08/49175205669_48.png
+bot_id: B1N4MPXRR
+attachments:
+- !ruby/hash:Slack::Messages::Message
+  fallback: sapling-v2
+  id: 1
+  color: 36a64f
+  fields:
+  - !ruby/hash:Slack::Messages::Message
+    title: sapling-v2
+    value: 'Agent: tc-general-puppet.wvrgroup.internal-24351'
+    short: false
+  - !ruby/hash:Slack::Messages::Message
+    title: Commits
+    value: |
+      d91457a47c :: ppadovani :: Updates
+
+      6ffcc7e431 :: ppadovani :: Initial repairer commit
+
+      e6ca5e5366 :: jmonette :: Revert "remove apiclient bundle"
+
+      This reverts commit 4b4fa036a09657dcc4a961469c8b4ef67f0ae25b.
+
+      d6ce4c57d8 :: jmonette :: remove apiclient bundle
+
+      a653d9ddde :: jmonette :: [COREAPI-10525] Set up framework for the hydrator
+
+      (+ 75 more)
+    short: false
+  - !ruby/hash:Slack::Messages::Message
+    title: Changes By
+    value: spalamarchuk, jmonette, ppadovani, svanderworth, jdebo, bharclerode, ckillmar,
+      gschmidt
+    short: false
+type: message
+subtype: bot_message
+team: T024LBJNK
+user_team: T024LBJNK
+channel: C1N64EWDV
+ts: '1473971299.000015'
