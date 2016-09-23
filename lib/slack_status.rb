@@ -20,6 +20,7 @@ module AdafruitRadiator
     def color
       return nil unless @message.attachments
       @message.attachments.each { |attachment| return attachment.color if attachment.color }
+      nil
     end
 
     def valid?

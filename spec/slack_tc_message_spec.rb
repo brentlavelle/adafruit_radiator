@@ -16,6 +16,7 @@ describe 'parse TeamCity Slackbot messages' do
       stm = AdafruitRadiator::SlackTeamcityMessage.new message
       expect(stm.valid?).to be true
       expect(stm.status).to be == :running
+      expect(stm.color).to be_nil
     end
   end
 
