@@ -9,7 +9,7 @@ module AdafruitRadiator
       # the regexp below matches team city slackbot message text
       if match = message.text.match(/\|(\w+) \- (.+) \#(\d+|\?+)/)
         @status = match[1].downcase.to_sym
-        @job    = match[2].downcase.to_sym
+        @job    = match[2].downcase
         @valid  = true
       else
         @valid = false
