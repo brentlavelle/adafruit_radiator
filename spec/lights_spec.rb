@@ -4,7 +4,7 @@ require_relative '../lib/usb_lights'
 describe 'watch the lights' do
   before :all do
     @test_light = 0
-    @light_bridge = AdafruitRadiator::LightBridge.new '/dev/cu.usbserial-00001141'
+    @light_bridge = AdafruitRadiator::LightBridge.new Dir.glob('/dev/cu.usbserial-*').first
   end
 
   after :all do
