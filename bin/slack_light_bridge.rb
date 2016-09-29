@@ -12,8 +12,7 @@ light_bridge    = AdafruitRadiator::LightBridge.new port_str
 env_var='SLACK_LIGHT_TOKEN'
 token = ENV[env_var] or raise Exception, "You must set env variable #{env_var} to your slack token"
 
-# some bots include color when they are missing we make up colors
-fallback_colors = {
+status_color = {
     running:   '1111ff',
     failed:    'ff0505',
     succeeded: '05ff05',
@@ -22,7 +21,7 @@ fallback_colors = {
 # test the light then turn it off
 logger = Logger.new STDOUT
 logger.info "Test lights"
-fallback_colors.each_value do |color|
+status_color.each_value do |color|
   light_bridge.set_light light_number, color
   sleep 0.3
 end
@@ -36,8 +35,7 @@ logger.info "Connected to Slack"
 slack_monitor.when_message do |data|
   message = AdafruitRadiator::SlackTeamcityMessage.new data
   next unless message.valid?
-  color = message.color
-  color = fallback_colors[message.status] if color.nil?
+  color = status_color[message.status]
   logger.info "Status: #{message.status} color: #{color} job: #{message.job.inspect}"
   light_bridge.set_light light_number, color
 end
