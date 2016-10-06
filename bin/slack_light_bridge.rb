@@ -4,8 +4,8 @@ require_relative '../lib/slack_monitor'
 require_relative '../lib/usb_lights'
 
 # params for serial port
-test_light   = ARGV[0] || 0 # This is the pin position of this light in the chain
-port_str     = ARGV[1] || Dir.glob('/dev/cu.usbserial-*').first
+test_lights  = [0, 1, 2]
+port_str     = ARGV[0] || Dir.glob('/dev/cu.usbserial-*').first
 light_bridge = AdafruitRadiator::LightBridge.new port_str
 
 # params for slack
@@ -13,7 +13,7 @@ env_var      ='SLACK_LIGHT_TOKEN'
 token = ENV[env_var] or raise Exception, "You must set env variable #{env_var} to your slack token"
 
 configuration = [
-    [/api-endpoint-sapling-v2 test/, [1]],
+    [/api-endpoint-sapling-v2 test/, [0, 1, 2]],
     [/api-endpoint-sapling-v2/, [0, 1]],
     [/api-auth-v2/, [0]],
 ]
@@ -28,10 +28,14 @@ status_color = {
 logger       = Logger.new STDOUT
 logger.info "Test lights"
 status_color.each_value do |color|
-  light_bridge.set_light test_light, color
+  test_lights.each do |light|
+    light_bridge.set_light light, color
+  end
   sleep 0.3
 end
-light_bridge.set_light test_light, '000000'
+test_lights.each do |light|
+  light_bridge.set_light light, '000000'
+end
 
 
 logger        = Logger.new STDOUT
@@ -42,7 +46,7 @@ slack_monitor.when_message do |data|
   message = AdafruitRadiator::SlackTeamcityMessage.new data
   next unless message.valid?
   color = status_color[message.status]
-  job = message.job
+  job   = message.job
   logger.info "Status: #{message.status} color: #{color} job: #{job.inspect}"
   configuration.each do |config|
     next unless job.match config[0]
