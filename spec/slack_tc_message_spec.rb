@@ -44,4 +44,20 @@ describe 'parse TeamCity Slackbot messages' do
       expect(stm.valid?).to be false
     end
   end
+
+  it 'can read build numbers' do
+    each_message /^failed_1/ do |message|
+      stm = AdafruitRadiator::SlackTeamcityMessage.new message
+      expect(stm.valid?).to be true
+      expect(stm.build_id).to be == '353'
+    end
+  end
+
+  it 'can read the lack of build numbers' do
+    each_message /^start_2/ do |message|
+      stm = AdafruitRadiator::SlackTeamcityMessage.new message
+      expect(stm.valid?).to be true
+      expect(stm.build_id).to be false
+    end
+  end
 end
