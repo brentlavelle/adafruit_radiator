@@ -1,0 +1,24 @@
+--- !ruby/hash:Slack::Messages::Message
+text: "<http://teamcity:8111/viewLog.html?buildTypeId=broken_stuff&amp;buildId=12345|Failed - core-api :: Core API 2.0 :: Sapling :: api-endpoint-sapling-v2 Canary Build #2.0-SNAPSHOT 8daa702 [71/merge]>"
+username: TeamCity API2.0
+icons: !ruby/hash:Slack::Messages::Message
+  image_48: https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2016-06-08/49175205669_48.png
+bot_id: B1N4MPXRR
+attachments:
+- !ruby/hash:Slack::Messages::Message
+  fallback: broken_stuff
+  id: 1
+  color: d00000
+  fields:
+  - !ruby/hash:Slack::Messages::Message
+    title: broken_stuff
+    value: |-
+      Agent: tc-general-puppet.wvrgroup.internal-24275
+      Elapsed: 2m:4s
+    short: false
+type: message
+subtype: bot_message
+team: T024LBJNK
+user_team: T024LBJNK
+channel: C1N64EWDV
+ts: '1473972271.000019'
