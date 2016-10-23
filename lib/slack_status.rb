@@ -7,7 +7,7 @@ module AdafruitRadiator
     def initialize message
       @message = message
       # the regexp below matches team city slackbot message text
-      if match = message.text.match(/\|(\w+) \- (.+) \#(\d+|\?+)(.+)?/)
+      if !message.text.nil? && match = message.text.match(/\|(\w+) \- (.+) \#(\d+|\?+)(.+)?/)
         @status   = match[1].downcase.to_sym
         @job      = match[2].downcase
         @build_id = match[3]
