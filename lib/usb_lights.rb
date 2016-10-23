@@ -3,6 +3,8 @@ require 'serialport'
 module AdafruitRadiator
   class LightBridge
     def initialize port_name, baud_rate=9600, data_bits=8, parity=SerialPort::NONE, stop_bits=1
+      @disabled = port_name.nil?
+      return if @disabled
       @sp = SerialPort.new(port_name, baud_rate, data_bits, stop_bits, parity)
       sleep 0.1
       hello_message = @sp.gets
@@ -16,6 +18,10 @@ module AdafruitRadiator
       raise ArgumentError, "Invalid color #{color}" unless color.match /^\h{6}$/
       hex_number = '%02X' % number
       message = hex_number+color.upcase
+      if @disabled
+        puts "Lightbridge disabled: setting #{number} to #{color}"
+        return
+      end
       @sp.write message+"\n"
 
       reply = @sp.gets.chomp
