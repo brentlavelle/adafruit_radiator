@@ -1,0 +1,23 @@
+--- !ruby/hash:Slack::Messages::Message
+text: ''
+bot_id: B02TUHTPQ
+attachments:
+- !ruby/hash:Slack::Messages::Message
+  fallback: 'stage-tests - #260 Started by timer (<http://jenkins.example.com:8080/job/stage-tests/260/|Open>)'
+  id: 1
+  color: d00000
+  fields:
+  - !ruby/hash:Slack::Messages::Message
+    title: ''
+    value: 'stage-tests - #260 Started by timer (<http://jenkins.example.com:8080/job/stage-tests/260/|Open>)'
+    short: false
+  mrkdwn_in:
+  - pretext
+  - text
+  - fields
+type: message
+subtype: bot_message
+team: T028FK005
+user_team: T028FK005
+channel: C0AUZ0SHL
+ts: '1477524843.000029'

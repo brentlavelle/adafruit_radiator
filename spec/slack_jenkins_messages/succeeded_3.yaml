@@ -1,0 +1,29 @@
+--- !ruby/hash:Slack::Messages::Message
+text: ''
+bot_id: B02TUHTPQ
+attachments:
+- !ruby/hash:Slack::Messages::Message
+  fallback: |-
+    index-service-build » master - #57 Changes:
+    - FEA-321 update morestuff [lavelle]
+    - BUG-002 fixbug [lavelle]
+  id: 1
+  color: 36a64f
+  fields:
+  - !ruby/hash:Slack::Messages::Message
+    title: ''
+    value: |-
+      index-service-build » master - #57 Changes:
+      - FEA-134 update somestuff [lavelle]
+      - BUG-002 fixbug [lavelle]
+    short: false
+  mrkdwn_in:
+  - pretext
+  - text
+  - fields
+type: message
+subtype: bot_message
+team: T028FK005
+user_team: T028FK005
+channel: C02TT2PP5
+ts: '1477519278.001607'

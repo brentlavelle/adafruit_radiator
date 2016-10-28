@@ -1,0 +1,7 @@
+--- !ruby/hash:Slack::Messages::Message
+type: message
+channel: D2UMP52RG
+user: U2TCM6K3L
+text: testagain
+ts: '1477523656.000006'
+team: T028FK005
