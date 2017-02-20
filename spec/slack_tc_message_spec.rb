@@ -1,5 +1,6 @@
 require 'rspec'
 require 'yaml'
+require 'slack-ruby-client'
 require_relative '../lib/slack_status'
 
 describe 'parse TeamCity Slackbot messages' do

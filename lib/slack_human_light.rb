@@ -1,5 +1,3 @@
-require 'slack-ruby-bot'
-
 module AdafruitRadiator
   class SlackHumanLight
     attr_reader :light, :color

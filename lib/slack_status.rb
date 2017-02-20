@@ -1,5 +1,3 @@
-require 'slack-ruby-bot'
-
 module AdafruitRadiator
   class SlackTeamcityMessage
     attr_reader :status, :job, :build_id

@@ -1,4 +1,4 @@
-require 'slack-ruby-bot'
+require 'slack-ruby-client'
 
 module AdafruitRadiator
   class SlackMonitor
