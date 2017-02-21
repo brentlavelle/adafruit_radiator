@@ -1,4 +1,5 @@
 require 'logger'
+require 'yaml'
 require_relative '../lib/slack_status'
 require_relative '../lib/slack_human_light'
 require_relative '../lib/slack_monitor'
@@ -13,11 +14,7 @@ light_bridge = AdafruitRadiator::LightBridge.new port_str
 env_var      ='SLACK_LIGHT_TOKEN'
 token        = ENV[env_var] or raise Exception, "You must set env variable #{env_var} to your slack token"
 
-configuration = [
-    [/thing build/,  [0, 1]],
-    [/thing deploy/, [0, 2]],
-    [/thing test/,   [0, 3]],
-]
+configuration = YAML.load(File.read("../status_config.yaml"))
 
 status_color = {
     running:   '1111ff',

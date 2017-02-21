@@ -1,0 +1,10 @@
+---
+- - !ruby/regexp /thing build/
+  - - 0
+    - 1
+- - !ruby/regexp /thing deploy/
+  - - 0
+    - 2
+- - !ruby/regexp /thing test/
+  - - 0
+    - 3
